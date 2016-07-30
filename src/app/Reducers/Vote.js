@@ -1,28 +1,28 @@
+import { createReducer } from 'reduxsauce'
+import { VoteActionTypes } from './../Actions/Vote'
+
 const INITIAL_STATE = {
     aOptionVoteCounts: 0,
     bOptionVoteCounts: 0
 };
 
-export default (state = INITIAL_STATE, action) => {
-    if (!action) {
-        return state;
-    }
+const incrA = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        aOptionVoteCounts: state.aOptionVoteCounts + 1,
+    };
+};
 
-    switch (action.type) {
-        case 'INCR_A':
-            return Object.assign({}, state, {
-                aOptionVoteCounts: state.aOptionVoteCounts + 1
-            });
-            break;
+const incrB = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        bOptionVoteCounts: state.bOptionVoteCounts + 1,
+    };
+};
 
-        case 'INCR_B':
-            return Object.assign({}, state, {
-                bOptionVoteCounts: state.bOptionVoteCounts + 1
-            });
-            break;
+const HANDLERS = {
+    [VoteActionTypes.INCR_A]: incrA,
+    [VoteActionTypes.INCR_B]: incrB,
+};
 
-        default:
-            return state;
-            break;
-    }
-}
+export default createReducer(INITIAL_STATE, HANDLERS);
