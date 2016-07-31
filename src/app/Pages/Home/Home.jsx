@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Actions from './../../Actions';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Actions from './../../Actions'
+import Selectors from './../../Selectors'
 
 class Home extends Component {
     render() {
@@ -33,8 +34,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        aOptionCounts: state.Vote.aOptionVoteCounts,
-        bOptionCounts: state.Vote.bOptionVoteCounts
+        aOptionCounts: Selectors.Vote.getAOptionCounts(state),
+        bOptionCounts: Selectors.Vote.getBOptionCounts(state),
     };
 };
 
