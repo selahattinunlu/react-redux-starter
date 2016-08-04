@@ -16,8 +16,8 @@ import './../stylesheet/index.scss';
 SagaMiddleware.run(Sagas);
 
 render(
-    <Provider store={store}>
-        {routes}
-    </Provider>,
-    document.getElementById("app")
+  <Provider store={store}>
+    {routes}
+  </Provider>,
+  document.getElementById("app")
 );

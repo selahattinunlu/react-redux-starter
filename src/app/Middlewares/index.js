@@ -6,7 +6,7 @@ import ConsoleLine from './ConsoleLine';
 import Saga from './Saga';
 
 export default applyMiddleware(
-    ConsoleLogger,
-    ConsoleLine,
-    Saga
+  ConsoleLogger,
+  ConsoleLine,
+  Saga
 );

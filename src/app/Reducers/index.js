@@ -4,5 +4,5 @@ import { combineReducers } from 'redux';
 import Vote from './Vote';
 
 export default combineReducers({
-    Vote
+  Vote
 });
