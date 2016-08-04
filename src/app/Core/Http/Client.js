@@ -1,9 +1,6 @@
 import { create } from 'apisauce'
+import env from './../../../env';
 
-// define the api
-const HttpClient = create({
-    baseURL: 'https://api.github.com',
-    headers: {'Accept': 'application/vnd.github.v3+json'}
-});
+const HttpClient = create(env.httpClient);
 
 export default HttpClient;
